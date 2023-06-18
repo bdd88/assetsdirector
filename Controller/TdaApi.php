@@ -110,7 +110,12 @@ class TdaApi
         return FALSE;
     }
 
-    /** Update and save tokens near expiration using an existing Refresh token.*/
+    /**
+     * Update and save tokens near expiration using an existing Refresh token.
+     *
+     * @param string $accountId
+     * @return boolean FALSE if there is a problem, TRUE otherwise.
+     */
     public function updateTokens(string $accountId): bool
     {
         $account = $this->getAccount($accountId);
@@ -145,6 +150,8 @@ class TdaApi
             $this->log($accountId, 'Failed to retrieve updated access token. Http code: ' . $apiRequest->response->error);
             return FALSE;
         }
+
+        return TRUE;
     }
     
     // TODO: Test tokens and then rewrite everything below here.
