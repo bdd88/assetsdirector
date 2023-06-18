@@ -1,3 +1,3 @@
 <?php
-$creds = array(getenv('DB_HOST'), getenv('DB_USER'), getenv('DB_PASS'), getenv('DB_NAME'));
+$creds = array(apache_getenv('DB_HOST'), apache_getenv('DB_USER'), apache_getenv('DB_PASS'), apache_getenv('DB_NAME'));
 var_dump($creds);
