@@ -1,0 +1,40 @@
+<?php if (count($trades) > 0): ?>
+<div id="tableContainer">
+    <table>
+
+        <tr>
+            <th>Start</th>
+            <th>Stop</th>
+            <th>Symbol</th>
+            <th>Strategy</th>
+            <th>Orders</th>
+            <th>Transactions</th>
+            <th>Length</th>
+            <th>Quantity</th>
+            <th>Return</th>
+            <th>Win Rate</th>
+            <th>Total P/L</th>
+        </tr>
+
+        <?php foreach ($trades as $trade): ?>
+        <tr>
+            <td><?= date('Y/m/d H:i:s', $trade->openTimestamp) ?></td>
+            <td><?= date('Y/m/d H:i:s', $trade->closeTimestamp) ?></td>
+            <td><?= $trade->symbol ?></td>
+            <td><?= $trade->strategy ?></td>
+            <td><?php foreach ($trade->orderIds as $orderId) {echo $orderId . ', ';} ?></td>
+            <td><?php foreach ($trade->transactionIds as $transactionId) {echo $transactionId . ', ';} ?></td>
+            <td><?= $calendar->calculateTimespan($trade->lengthSeconds, 2) ?></td>
+            <td><?= $trade->buy->amount ?></td>
+            <td><?= number_format($trade->return, 2, '.', ',') ?></td>
+            <td><?= number_format($trade->runningWinRate, 0, '.', ',') ?>%</td>
+            <td><?= number_format($trade->runningReturn, 2, '.', ',') ?></td>
+        </tr>
+        <?php endforeach ?>
+
+    </table>
+</div>
+<?php require dirname(__DIR__, 1) . DIRECTORY_SEPARATOR . 'Presentation' . DIRECTORY_SEPARATOR . 'graph.phtml' ?>
+<?php else: ?>
+<h3> No trades yet</h3>
+<?php endif ?>

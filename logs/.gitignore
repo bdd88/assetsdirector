@@ -1,0 +1,3 @@
+# This directory needs to exist for logs, but nothing in it should be tracked.
+*
+!.gitignore

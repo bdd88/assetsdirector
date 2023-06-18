@@ -1,0 +1,11 @@
+Options -Indexes
+RewriteEngine On
+
+# Don't rewrite existing pages or directories.
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+# Redirect requests for pages that don't exist to the webapp.
+# The QSA(Query String Append) flag appends additional parameters to the redirected page.
+# The L(Last) flag prevents additional rewrite rules from being applied for any matches.
+RewriteRule ^(.*)$ /index.php?page=$1 [QSA,L]

@@ -1,0 +1,36 @@
+<?php if (count($transactions) > 0): ?>
+<div id="tableContainer">
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Order</th>
+            <th>Transaction</th>
+            <th>Description</th>
+            <th>Type</th>
+            <th>Symbol</th>
+            <th>Instruction</th>
+            <th>Amount</th>
+            <th>Price</th>
+            <th>Fees</th>
+            <th>Cost</th>
+        </tr>
+        <?php foreach ($transactions as $transaction): ?>
+        <tr>
+            <td><?= $transaction['transactionDate'] ?></td>
+            <td><?= $transaction['orderId'] ?></td>
+            <td><?= $transaction['transactionId'] ?></td>
+            <td><?= $transaction['description'] ?></td>
+            <td><?= $transaction['transactionSubType'] ?></td>
+            <td><?= $transaction['symbol'] ?></td>
+            <td><?= $transaction['instruction'] ?></td>
+            <td><?= number_format($transaction['amount'], 0, '.', ',') ?></td>
+            <td><?= number_format($transaction['price'], 2, '.', ',') ?></td>
+            <td><?= number_format($transaction['secFee'], 2, '.', ',') ?></td>
+            <td><?= number_format($transaction['netAmount'], 2, '.', ',') ?></td>
+        </tr>
+        <?php endforeach ?>
+    </table>
+</div>
+<?php else: ?>
+<h3> No transactions yet</h3>
+<?php endif ?>

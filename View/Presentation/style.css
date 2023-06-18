@@ -1,0 +1,83 @@
+#navwrapper {
+    width: 15%;
+    float: left;
+}
+#mainwrapper {
+    width: 85%;
+    float: right;
+}
+#nav {
+    margin: 15px;
+    overflow: hidden;
+}
+#main {
+    margin: 15px;
+}
+#progressWrapper {
+    width: 400px;
+    background-color: grey;
+}
+#progressBar {
+    width: 1%;
+    height: 25px;
+    background-color: green;
+    text-align: left;
+    color: white;
+    white-space: nowrap;
+    overflow: visible;
+}
+#tableContainer {
+    height: 85vh;
+    overflow-y: auto;
+}
+.content {
+    box-sizing: border-box;
+    background-color: #F0F8FF;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 4px;
+}
+.nav-item {
+    width: 100%;
+    display: block;
+    text-align: left;
+    border: none;
+    white-space: normal;
+    float: none;
+    outline: 0;
+    cursor: pointer;
+    user-select: none;
+    text-decoration: none;
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    line-height: 2;
+    color: black;
+}
+.nav-item:hover {
+    color: white;
+    background-color: #2196F3;
+  }
+table {
+    position:relative;
+    width: 100%;
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+tr {
+    border-top: 1px solid black;
+}
+tr:nth-child(even) {
+    background: #e7ecf0;
+}
+tr:nth-child(odd) {
+    background: #e0e3e6;
+}
+tr:hover {
+    background: white;
+}
+th {
+    position:sticky;
+    top:0;
+    background-color: #d5d5d5;
+    text-align: left;
+}
