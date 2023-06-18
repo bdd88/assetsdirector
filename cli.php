@@ -19,7 +19,7 @@ while (sizeof($args) > 0) {
 }
 
 // Start the app CLI.
-require './NexusFrame/Dependency/AutoLoader.php';
+require __DIR__ . '/NexusFrame/Dependency/AutoLoader.php';
 $autoLoader = new \NexusFrame\Dependency\AutoLoader();
 $autoLoader->register('NexusFrame', __DIR__ . DIRECTORY_SEPARATOR . 'NexusFrame');
 $autoLoader->register('Bdd88\AssetsDirector', __DIR__);
